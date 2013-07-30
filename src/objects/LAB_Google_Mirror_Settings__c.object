@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <customSettingsVisibility>Public</customSettingsVisibility>
+    <description>Individual User Settings</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>access_token__c</fullName>
+        <externalId>false</externalId>
+        <label>access_token</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>refresh_token__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>automatically populated</inlineHelpText>
+        <label>refresh_token</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>LAB_Google_Mirror_Settings</label>
+</CustomObject>

@@ -1,0 +1,28 @@
+<apex:page controller="LAB_Mirror_Settings_Controller">
+    
+    <h1>Google Glass Configuration</h1>
+    
+    <apex:form >
+        
+    <apex:outputPanel rendered="{!(!apiSettingsReady)}">
+    	<!-- redirect to custom settings configuration -->
+        <p>You must manage the custom setting "LAB_Google_API_Settings" to continue.</p>
+        
+    </apex:outputPanel>
+
+	<apex:outputPanel rendered="{!(apiSettingsReady && !userSettingsReady)}">
+        <p>You must authorize this app with Google before continuing.</p>
+        <p><apex:commandButton action="{!authorizeApp}" value="Authorize this app with Google." /></p>
+        
+    </apex:outputPanel>        
+
+	<apex:outputPanel rendered="{!(apiSettingsReady && userSettingsReady)}">
+        <p>Update your settings here.</p>
+        
+    </apex:outputPanel>        
+        
+
+        
+        
+    </apex:form>
+</apex:page>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>LAB_Mirror_Publisher</members>
+        <members>LAB_Mirror_Settings_Controller</members>
+        <members>LAB_Mirror_Settings_Oauth_Controller</members>
+        <members>LAB_Mirror_Utility</members>
+        <name>ApexClass</name>
+    </types>
+    <types>
+        <members>LAB_Mirror_Settings</members>
+        <members>LAB_Mirror_Settings_OauthCallback</members>
+        <name>ApexPage</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>CustomApplication</name>
+    </types>
+    <types>
+        <members>LAB_Google_API_Settings__c</members>
+        <members>LAB_Google_Mirror_Settings__c</members>
+        <name>CustomObject</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>CustomTab</name>
+    </types>
+    <version>25.0</version>
+</Package>
