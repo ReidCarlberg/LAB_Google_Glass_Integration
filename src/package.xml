@@ -1,9 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
+        <members>LAB_Mirror_Exception</members>
+        <members>LAB_Mirror_Mock_Google_CodeToken_Impl</members>
+        <members>LAB_Mirror_Mock_TimelinePostFails_Impl</members>
+        <members>LAB_Mirror_Mock_TimelinePost_Impl</members>
+        <members>LAB_Mirror_Mock_TimelineThenToken_Impl</members>
+        <members>LAB_Mirror_Mock_TimelineTokenFails_Impl</members>
         <members>LAB_Mirror_Publisher</members>
+        <members>LAB_Mirror_Publisher_Test</members>
         <members>LAB_Mirror_Settings_Controller</members>
+        <members>LAB_Mirror_Settings_Controller_Test</members>
         <members>LAB_Mirror_Settings_Oauth_Controller</members>
+        <members>LAB_Mirror_Settings_Oauth_Ctrl_Test</members>
+        <members>LAB_Mirror_Test_Utility</members>
         <members>LAB_Mirror_Utility</members>
         <name>ApexClass</name>
     </types>
@@ -24,6 +34,7 @@
     <types>
         <members>LAB_Google_API_Settings__c</members>
         <members>LAB_Google_Mirror_Settings__c</members>
+        <members>LAB_Mirror_Result__c</members>
         <name>CustomObject</name>
     </types>
     <types>

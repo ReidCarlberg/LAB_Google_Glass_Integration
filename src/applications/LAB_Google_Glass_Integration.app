@@ -4,4 +4,5 @@
     <label>LAB Google Glass Integration</label>
     <tab>standard-Chatter</tab>
     <tab>LAB_Configuration</tab>
+    <tab>LAB_Mirror_Result__c</tab>
 </CustomApplication>
