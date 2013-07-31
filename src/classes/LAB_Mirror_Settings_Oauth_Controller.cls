@@ -8,6 +8,10 @@ public class LAB_Mirror_Settings_Oauth_Controller{
         String error = ApexPages.currentPage().getParameters().get('error');
         String code = ApexPages.currentPage().getParameters().get('code');
 
+        if (error != null && error.length() > 0) {
+            return Page.LAB_Error;
+        }
+        
         String postBody = 
 			'code=' + code +
 			'&client_id=' + apiSettings.client_id__c + 
@@ -28,7 +32,6 @@ public class LAB_Mirror_Settings_Oauth_Controller{
         GoogleResponse r = (GoogleResponse) JSON.deserialize(response, LAB_Mirror_Settings_Oauth_Controller.GoogleResponse.class);
                 
         System.debug(r);
-        
         System.debug('refresh_token');
         System.debug(r.refresh_token);
         

@@ -8,6 +8,7 @@
         <name>ApexClass</name>
     </types>
     <types>
+        <members>LAB_Error</members>
         <members>LAB_Mirror_Settings</members>
         <members>LAB_Mirror_Settings_OauthCallback</members>
         <name>ApexPage</name>

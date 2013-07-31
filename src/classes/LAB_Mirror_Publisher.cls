@@ -19,7 +19,6 @@ public class LAB_Mirror_Publisher{
         LAB_Google_Mirror_Settings__c userSettings = LAB_Google_Mirror_Settings__c.getInstance(ownerId);
         
         if (apiSettings == null || apiSettings.client_id__c == null || userSettings == null || userSettings.access_token__c == null) {
-            //do nothing
             System.debug('no settings');
         } else {
             LAB_Mirror_Publisher.handlePublishMessage(ownerId, message);
@@ -27,21 +26,21 @@ public class LAB_Mirror_Publisher{
     }
     
     @future(callout=true)
-    static void handlePublishMessage(Id ownerId, String message) {
-
-
-        
+    static void handlePublishMessage(Id ownerId, String message) {        
         LAB_Google_API_Settings__c apiSettings = LAB_Google_API_Settings__c.getOrgDefaults();
         LAB_Google_Mirror_Settings__c userSettings = LAB_Google_Mirror_Settings__c.getInstance(ownerId);
         
         Integer postStatus = handleTimelinePost(userSettings.access_token__c, message);
         if (postStatus != 200) {
-            if (postStatus == 400) {
+            if (postStatus == 401) {
+                System.debug('attempting to get new access_token');
                 String newAccessToken = handleTokenRefresh(apiSettings, userSettings); 
                 postStatus = handleTimelinePost(newAccessToken, message);
-                if (postStatus != 200) {
+                if (postStatus == 200) {
+                    userSettings.access_token__c = newAccessToken;
+                    update userSettings;
+                } else {
                    System.debug('error -- refresh token didn\'t work.');
-                    
                 }
             } else {
                 System.debug('other error ' + postStatus);
@@ -89,10 +88,7 @@ public class LAB_Mirror_Publisher{
         
         LAB_Mirror_Settings_Oauth_Controller.GoogleResponse r = (LAB_Mirror_Settings_Oauth_Controller.GoogleResponse) JSON.deserialize(response, LAB_Mirror_Settings_Oauth_Controller.GoogleResponse.class);
                 
-        userSettings.access_token__c = r.access_token;
-        update userSettings;
-        
-    	return userSettings.access_token__c;   
+    	return r.access_token;   
     }
     
     class TimelineMessage {
