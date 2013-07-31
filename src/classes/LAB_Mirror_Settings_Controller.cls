@@ -20,6 +20,7 @@ public class LAB_Mirror_Settings_Controller{
             '&redirect_uri=' + EncodingUtil.urlEncode(apiSettings.redirect_uri__c, 'UTF-8') +  
             '&response_type=code' +
             '&client_id=' + apiSettings.client_id__c + 
+            '&access_type=offline' +
             '&approval_prompt=force';
             
     	return new PageReference(url);  

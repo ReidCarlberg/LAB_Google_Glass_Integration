@@ -21,13 +21,18 @@ public class LAB_Mirror_Settings_Oauth_Controller{
         req.setBody(postBody);
 
 		HttpResponse res = new Http().send(req);
-	    String response = res.getBody();        
+	    String response = res.getBody(); 
+        
+        System.debug(response);
         
         GoogleResponse r = (GoogleResponse) JSON.deserialize(response, LAB_Mirror_Settings_Oauth_Controller.GoogleResponse.class);
                 
         System.debug(r);
         
-        userSettings.refresh_token__c =r.access_token;
+        System.debug('refresh_token');
+        System.debug(r.refresh_token);
+        
+        userSettings.refresh_token__c =r.refresh_token;
         userSettings.access_token__c = r.access_token;
         
         upsert userSettings;
@@ -37,6 +42,7 @@ public class LAB_Mirror_Settings_Oauth_Controller{
     
     public class GoogleResponse {
         public String access_token {get; set; }
+        public String refresh_token {get; set; }
         public String token_type { get; set; }
         public String expires_in { get; set; }
         public String id_token { get; set; }

@@ -19,6 +19,8 @@
 	<apex:outputPanel rendered="{!(apiSettingsReady && userSettingsReady)}">
         <p>Update your settings here.</p>
         
+        
+        <p><apex:commandButton action="{!authorizeApp}" value="Force app to reauthorize with Google" /></p>
     </apex:outputPanel>        
         
 
