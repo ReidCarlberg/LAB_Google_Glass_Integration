@@ -13,3 +13,6 @@ Other use cases:
 * Exceptional record alerts
 * Replies with webhooks
 
+Scope string for Google Client settings.
+
+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fglass.timeline+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fglass.location	
